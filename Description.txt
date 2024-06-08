@@ -1,0 +1,68 @@
+﻿// BudndleConfig
+1. NutGet => install Microsoft.AspNet.Web.Optimization
+
+2. WebApplication11 => App_Start => BundleConfig.cs
+3. WebApplication11 => Global.asax => BundleConfig.RegisterBundles(BundleTable.Bundles); ro add kon
+
+4. toye App_Start => BundleConfig.cs => input ha case sensetive hastan. mesle Site.css, na site.css
+
+5. negah kon be Views => Shared => _Layout.cshtml
+bundle ham hajme file ro kam mikone, ham kholase mishe 
+
+
+
+//-------------------------------------------------------
+// pseudocode
+
+NewsGroup:
+	NewsGroupId(PK)
+	NewsTitle
+	ImageName
+
+News:
+	NewsId(PK)
+	NewsTitle
+	Description
+	ImageName
+	RegisterDate
+	IsActive
+	See
+	Like
+	NewsGroupId(FK)
+	UserId(FK)
+
+Comment:
+	CommentId
+	Comment
+	Name
+	Email
+	RegisterDate
+	IsActive
+	NewsId(FK)
+
+User:
+	UserId(PK)
+	MobileNumber
+	Password
+	RegisterDate
+	IsActive
+	
+1. NutGet => install EntityFramework
+2. Web.config => fix konim <connectionstring>
+3. Navbar => View => Other Windows => Package Manager Console
+4. Default project ro mizarim roye WebApplication11
+5. cmd => enable-migrations
+7. cmd => Add-migration CreateDb		// CreateDb esme migratione ma hast, khodemun entekhab mikonim
+8. cmd => update-Database
+
+//----------------------------------------
+// Repository
+1. create Repository Folder, add classes
+2. negah kon be flowchart-Repository.jpg
+3. negah kon be Repository/UserRepository.cs   va   Repository/IUserRepository   va   IGenericRepository.cs
+
+//----------------------------------------
+// Service
+1. 1. create Service Folder, add classes
+2. negah kon be flowchart-Service.jpg
+3. negah kon be Service/UserService.cs  va  Service/IUserService   va   IGenericService.cs
